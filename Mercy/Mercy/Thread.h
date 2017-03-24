@@ -1,12 +1,12 @@
-#pragma once
-
-class Thread
-{
-public:
-	Thread();
-	~Thread();
-
-private:
-
-};
-
+//#pragma once
+//
+//class Thread
+//{
+//public:
+//	Thread();
+//	~Thread();
+//
+//private:
+//
+//};
+//
