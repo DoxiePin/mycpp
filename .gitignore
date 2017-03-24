@@ -1,0 +1,10 @@
+*.pdb
+*.idb
+*.obj
+*.tlog
+*.vcxproj
+*.filters
+Mercy/Debug/
+*.suo
+Mercy/Mercy/Debug/Mercy.log
+Mercy/Mercy.VC.db
