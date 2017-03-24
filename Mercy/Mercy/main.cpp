@@ -1,20 +1,46 @@
 #include <iostream>
+
 #include "3rdParty\delegate.hpp"
+#include "Core/Thread.h"
+
 using namespace srutil;
 
-typedef delegate2<void, int, int> mydel;
+typedef delegate<void(int, int)> mydel;
 
 mydel del;
 
-
-void testFunc(int a, int b) {
-	std::cout << a + b;
+int testFunc() {
+	while (true) {
+		std::cout << "test!" << std::endl;
+	}
+	return 0;
 }
 
-int main() {
-	del = mydel::from_function<&testFunc>();
-	del(20, 30);
+class SomeClass {
+private:
+	int i;
+public :
+	int testFunc() {
+		i = 0;
+		while (true) {
+			std::cout << i << std::endl;
+			i++;
+		}
+		return 0;
+	}
+};
 
+int main() {
+	SomeClass some;
+	// Thread thread(EntryPoint::from_function<&testFunc>());
+	Thread thread(EntryPoint::from_method<SomeClass, &SomeClass::testFunc>(&some));
+	thread.start();
+	while (true) {
+		Sleep(1000);
+		thread.suspend();
+		Sleep(1000);
+		thread.resume();
+	}
 	return -1;
 }
 
