@@ -2,7 +2,6 @@
 *.idb
 *.obj
 *.tlog
-*.vcxproj
 *.filters
 Mercy/Debug/
 *.suo
