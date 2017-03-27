@@ -1,25 +1,23 @@
-//#include "IOCP.h"
-//#include "TcpSession.h"
-//
-//
-//IOCP::IOCP()
-//{
-//}
-//
-//
-//IOCP::~IOCP()
-//{
-//}
-//
-//int IOCP::initializeIOCP() {
-//	iocp = CreateIoCompletionPort(INVALID_HANDLE_VALUE, NULL, 0, 0);
-//	return 1;
-//}
-//
-//void IOCP::destroyIOCP() {
-//
-//}
-//
+#include "IOCP.h"
+
+IOCP::IOCP()
+{
+}
+
+
+IOCP::~IOCP()
+{
+}
+
+int IOCP::initializeIOCP() {
+	iocp = CreateIoCompletionPort(INVALID_HANDLE_VALUE, NULL, 0, 0);
+	return 1;
+}
+
+void IOCP::destroyIOCP() {
+
+}
+
 //BOOL IOCP::wait() {
 //	DWORD bytesTrans;
 //	TcpSession* session = NULL;

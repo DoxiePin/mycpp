@@ -142,15 +142,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Core\CriticalSection.cpp" />
+    <ClCompile Include="Core\IOCP.cpp" />
     <ClCompile Include="Core\Thread.cpp" />
-    <ClCompile Include="IOCP.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TcpSession.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="3rdParty\delegate.hpp" />
+    <ClInclude Include="Core\CriticalSection.h" />
+    <ClInclude Include="Core\IOCP.h" />
     <ClInclude Include="Core\Thread.h" />
-    <ClInclude Include="IOCP.h" />
     <ClInclude Include="TcpSession.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
